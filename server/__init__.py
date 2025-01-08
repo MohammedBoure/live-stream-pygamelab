@@ -1,10 +1,8 @@
 import socket
-from screenshot import Screenshot
+from .screenshot import Screenshot
 
-HOST = "127.0.0.1"
-PORT = 8000
 
-def start_server():
+def start_server(HOST="127.0.0.1",PORT=8000):
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as server_socket:
         try:
             server_socket.bind((HOST, PORT))

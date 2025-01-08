@@ -3,12 +3,10 @@ import pygame
 import io
 import threading
 
-HOST = "127.0.0.1"
-PORT = 8000 
 photo = bytearray()
 photo_lock = threading.Lock()
 
-def receive_images(screen, WIDTH, HEIGHT):
+def receive_images(screen, WIDTH, HEIGHT,HOST,PORT):
     global photo
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as server_socket:
         try:
